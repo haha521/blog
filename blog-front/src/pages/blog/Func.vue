@@ -5,7 +5,7 @@
 				<table>
 					<tr>
 						<td id="book">
-							<a href="https://github.com/imyanger/yblog" target="_blank">
+							<a href="https://github.com/haha521/blog" target="_blank">
 								<span class="resource_table_img">
 									<img alt="" src="static/img/blog/code.jpg">
 								</span>
