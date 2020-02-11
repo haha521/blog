@@ -299,7 +299,7 @@
                                 _this.artData.classify = classify;
                             }
                         }
-                        let imgUrl = data.serverPath + '/file/thumbImg?wh=150&path=' + data.artImgPath;
+                        let imgUrl = 'http://localhost:8088/file/thumbImg?wh=150&path=' + data.artImgPath;
                         _this.$refs.upload.setcropImg(imgUrl);
                         // 图片上传状态
                         _this.uploadInfo.response.status = 0;

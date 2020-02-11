@@ -136,7 +136,7 @@
                             type: '01',
                             content: msg,
                             status: 1,
-                            userId: 1
+                            userId: user.userId
                         })
                         .then(function (response) {
                             _this.handleCurrentChange(1);

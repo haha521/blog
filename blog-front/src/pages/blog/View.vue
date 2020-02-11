@@ -141,7 +141,7 @@
                             type: '02',
 							content: msg,
 							articleId: _this.viewData.article.articleId,
-                            userId: 1,
+                            userId: user.userId,
                             status: 1
                         })
                         .then(function (response) {
