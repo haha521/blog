@@ -1,0 +1,32 @@
+spring:
+  devtools:
+    restart:
+      enabled: true  #设置开启热部署
+      additional-paths: blog-back/src/main/java #重启目录
+      exclude: WEB-INF/**
+    freemarker:
+      cache: false    #页面不加载缓存，修改即时生效
+  datasource:
+    druid:
+      url: jdbc:mysql://192.168.56.132:3306/blog?useUnicode=true&characterEncoding=utf-8&useSSL=false
+      username: root
+      password: 123456
+      initial-size: 1
+      min-idle: 1
+      max-active: 20
+      test-on-borrow: true
+      # MySQL 8.x: com.mysql.cj.jdbc.Driver
+      driver-class-name: com.mysql.jdbc.Driver
+  redis:
+    host: 192.168.56.132
+    port: 6379
+    password:
+    timeout: 10000
+
+server:
+  port: 8088
+
+mybatis:
+  type-aliases-package: com.hanyuebb.blog.domain
+  mapper-locations: classpath:mapper/*.xml
+

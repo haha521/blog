@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hanyuebb.blog.mapper.TbArticleMapper">
+  <resultMap id="BaseResultMap" type="com.hanyuebb.blog.domain.TbArticle">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="article_id" jdbcType="INTEGER" property="articleId" />
+    <result column="module" jdbcType="VARCHAR" property="module" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="classify" jdbcType="VARCHAR" property="classify" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="author" jdbcType="VARCHAR" property="author" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="rux_words" jdbcType="VARCHAR" property="ruxWords" />
+    <result column="summary" jdbcType="VARCHAR" property="summary" />
+    <result column="word_type" jdbcType="CHAR" property="wordType" />
+    <result column="art_state" jdbcType="CHAR" property="artState" />
+    <result column="art_img_path" jdbcType="VARCHAR" property="artImgPath" />
+    <result column="likes" jdbcType="INTEGER" property="likes" />
+    <result column="views" jdbcType="INTEGER" property="views" />
+    <result column="commons" jdbcType="INTEGER" property="commons" />
+    <result column="status" jdbcType="CHAR" property="status" />
+    <result column="insert_time" jdbcType="TIMESTAMP" property="insertTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+    <result column="word_content" jdbcType="LONGVARCHAR" property="wordContent" />
+    <result column="year" jdbcType="INTEGER" property="year" />
+    <result column="month" jdbcType="INTEGER" property="month" />
+    <result column="day" jdbcType="INTEGER" property="day" />
+  </resultMap>
+</mapper>

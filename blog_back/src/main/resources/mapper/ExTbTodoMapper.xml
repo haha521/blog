@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hanyuebb.blog.exmapper.ExTbTodoMapper">
+  <resultMap id="BaseResultMap" type="com.hanyuebb.blog.domain.TbTodo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="type" jdbcType="CHAR" property="type" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="depict" jdbcType="VARCHAR" property="depict" />
+    <result column="status" jdbcType="CHAR" property="status" />
+    <result column="insert_time" jdbcType="TIMESTAMP" property="insertTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+</mapper>

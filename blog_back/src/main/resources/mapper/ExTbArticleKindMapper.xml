@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hanyuebb.blog.exmapper.ExTbArticleKindMapper">
+  <resultMap id="BaseResultMap" type="com.hanyuebb.blog.domain.TbArticleKind">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="art_kinds_id" jdbcType="INTEGER" property="artKindsId" />
+    <result column="module" jdbcType="VARCHAR" property="module" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="classify" jdbcType="VARCHAR" property="classify" />
+    <result column="sum" jdbcType="INTEGER" property="sum" />
+    <result column="status" jdbcType="CHAR" property="status" />
+    <result column="insert_time" jdbcType="TIMESTAMP" property="insertTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <select id="selectType" parameterType="String" resultType="com.hanyuebb.blog.domain.TbArticleKind">
+    select * from tb_article_kind where module=#{module}
+  </select>
+  <select id="selectClassify" parameterType="String" resultType="com.hanyuebb.blog.common.po.Children">
+    select classify from tb_article_kind where type=#{type}
+  </select>
+  <update id="sumAddOne" parameterType="java.util.Map">
+    update tb_article_kind t set t.sum=t.sum+1 where t.module=#{module} and t.type=#{type} and t.classify=#{classify}
+  </update>
+  <update id="sumSubOne" parameterType="java.util.Map">
+    update tb_article_kind t set t.sum=t.sum-1 where t.module=#{module} and t.type=#{type} and t.classify=#{classify}
+  </update>
+</mapper>

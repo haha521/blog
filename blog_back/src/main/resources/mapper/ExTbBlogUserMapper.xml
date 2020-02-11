@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hanyuebb.blog.exmapper.ExTbBlogUserMapper">
+  <resultMap id="BaseResultMap" type="com.hanyuebb.blog.domain.TbBlogUser">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="user_nick_name" jdbcType="VARCHAR" property="userNickName" />
+    <result column="gender" jdbcType="VARCHAR" property="gender" />
+    <result column="user_img_path" jdbcType="VARCHAR" property="userImgPath" />
+    <result column="summary" jdbcType="VARCHAR" property="summary" />
+    <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="phone_number" jdbcType="VARCHAR" property="phoneNumber" />
+    <result column="moblie" jdbcType="VARCHAR" property="moblie" />
+    <result column="email" jdbcType="VARCHAR" property="email" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="graduate_school" jdbcType="VARCHAR" property="graduateSchool" />
+    <result column="education" jdbcType="VARCHAR" property="education" />
+    <result column="birtd" jdbcType="TIMESTAMP" property="birtd" />
+    <result column="user_real_name" jdbcType="VARCHAR" property="userRealName" />
+    <result column="user_type" jdbcType="CHAR" property="userType" />
+    <result column="status" jdbcType="CHAR" property="status" />
+    <result column="insert_time" jdbcType="TIMESTAMP" property="insertTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+</mapper>

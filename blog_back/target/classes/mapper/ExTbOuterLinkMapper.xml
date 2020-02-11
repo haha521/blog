@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hanyuebb.blog.exmapper.ExTbOuterLinkMapper">
+  <resultMap id="BaseResultMap" type="com.hanyuebb.blog.domain.TbOuterLink">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="link_id" jdbcType="INTEGER" property="linkId" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="depict" jdbcType="VARCHAR" property="depict" />
+    <result column="link" jdbcType="VARCHAR" property="link" />
+    <result column="sequence" jdbcType="INTEGER" property="sequence" />
+    <result column="status" jdbcType="CHAR" property="status" />
+    <result column="insert_time" jdbcType="TIMESTAMP" property="insertTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+  <select id="selectOutLink" resultType="com.hanyuebb.blog.domain.TbOuterLink">
+    select * from tb_outer_link order by update_time desc limit 5
+  </select>
+</mapper>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hanyuebb.blog.exmapper.ExTbArticleMapper">
+  <resultMap id="BaseResultMap" type="com.hanyuebb.blog.domain.TbArticle">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="article_id" jdbcType="INTEGER" property="articleId" />
+    <result column="module" jdbcType="VARCHAR" property="module" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="classify" jdbcType="VARCHAR" property="classify" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="author" jdbcType="VARCHAR" property="author" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="rux_words" jdbcType="VARCHAR" property="ruxWords" />
+    <result column="summary" jdbcType="VARCHAR" property="summary" />
+    <result column="word_type" jdbcType="CHAR" property="wordType" />
+    <result column="art_state" jdbcType="CHAR" property="artState" />
+    <result column="art_img_path" jdbcType="VARCHAR" property="artImgPath" />
+    <result column="likes" jdbcType="INTEGER" property="likes" />
+    <result column="views" jdbcType="INTEGER" property="views" />
+    <result column="commons" jdbcType="INTEGER" property="commons" />
+    <result column="status" jdbcType="CHAR" property="status" />
+    <result column="insert_time" jdbcType="TIMESTAMP" property="insertTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+    <result column="word_content" jdbcType="LONGVARCHAR" property="wordContent" />
+    <result column="year" jdbcType="INTEGER" property="year" />
+    <result column="month" jdbcType="INTEGER" property="month" />
+    <result column="day" jdbcType="INTEGER" property="day" />
+  </resultMap>
+
+  <select id="selectStudy" parameterType="String" resultType="com.hanyuebb.blog.domain.TbArticle">
+    select t.article_id articleId,t.module,t.type,t.classify,t.title,t.author,t.user_id userId,t.rux_words ruxWords,t.summary,t.content,t.word_content wordContent,t.word_type wordType,t.art_state artState,t.art_img_path artImgPath,t.likes,t.views,t.commons,t.status,t.insert_time insertTime,t.update_time updateTime from tb_article t where t.module=#{module}  order by update_time desc limit 3
+  </select>
+
+  <select id="selectHotsArticle" parameterType="String" resultType="com.hanyuebb.blog.domain.TbArticle">
+    select t.article_id articleId,t.module,t.type,t.classify,t.title,t.author,t.user_id userId,t.rux_words ruxWords,t.summary,t.content,t.word_content wordContent,t.word_type wordType,t.art_state artState,t.art_img_path artImgPath,t.likes,t.views,t.commons,t.status,t.insert_time insertTime,t.update_time updateTime from tb_article t where t.module=#{module} order by views desc limit 5
+  </select>
+
+  <select id="selectEassy" parameterType="String" resultType="com.hanyuebb.blog.domain.TbArticle">
+    select t.article_id articleId,t.module,t.type,t.classify,t.title,t.author,t.user_id userId,t.rux_words ruxWords,t.summary,t.content,t.word_content wordContent,t.word_type wordType,t.art_state artState,t.art_img_path artImgPath,t.likes,t.views,t.commons,t.status,t.insert_time insertTime,t.update_time updateTime from tb_article t where t.module=#{module}  order by update_time desc limit 2
+  </select>
+
+  <select id="selectMaxTime" resultType="java.util.Date">
+    select max(update_time) from tb_article t where t.module='心情随笔模块'
+  </select>
+
+  <select id="selectMinTime" resultType="java.util.Date">
+    select min(update_time) from tb_article t where t.module='心情随笔模块'
+  </select>
+
+  <select id="selectByYearAndMonth" parameterType="Integer" resultType="com.hanyuebb.blog.domain.TbArticle">
+    select t.article_id articleId,t.module,t.type,t.classify,t.title,t.author,t.user_id userId,t.rux_words ruxWords,t.summary,t.content,t.word_content wordContent,t.word_type wordType,t.art_state artState,t.art_img_path artImgPath,t.likes,t.views,t.commons,t.status,t.insert_time insertTime,t.update_time updateTime from tb_article t where year(update_time)=#{year} and month(update_time)=#{month} and t.module='心情随笔模块'
+  </select>
+</mapper>

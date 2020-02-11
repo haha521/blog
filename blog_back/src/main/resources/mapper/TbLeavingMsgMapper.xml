@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hanyuebb.blog.mapper.TbLeavingMsgMapper">
+  <resultMap id="BaseResultMap" type="com.hanyuebb.blog.domain.TbLeavingMsg">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="msg_id" jdbcType="INTEGER" property="msgId" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="article_id" jdbcType="INTEGER" property="articleId" />
+    <result column="upper_id" jdbcType="INTEGER" property="upperId" />
+    <result column="msg_order" jdbcType="INTEGER" property="msgOrder" />
+    <result column="status" jdbcType="CHAR" property="status" />
+    <result column="insert_time" jdbcType="TIMESTAMP" property="insertTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+  </resultMap>
+</mapper>

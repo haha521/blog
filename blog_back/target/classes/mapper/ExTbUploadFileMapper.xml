@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hanyuebb.blog.exmapper.ExTbUploadFileMapper">
+  <resultMap id="BaseResultMap" type="com.hanyuebb.blog.domain.TbUploadFile">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="path_id" jdbcType="INTEGER" property="pathId" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="classify" jdbcType="VARCHAR" property="classify" />
+    <result column="file_name" jdbcType="VARCHAR" property="fileName" />
+    <result column="suffix" jdbcType="VARCHAR" property="suffix" />
+    <result column="img_path" jdbcType="VARCHAR" property="imgPath" />
+    <result column="sequence" jdbcType="INTEGER" property="sequence" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="status" jdbcType="CHAR" property="status" />
+    <result column="insert_time" jdbcType="TIMESTAMP" property="insertTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+</mapper>
