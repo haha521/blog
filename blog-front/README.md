@@ -1,4 +1,4 @@
-# yanger-app #
+# blog-front #
 
 基于Vue.js 2.x系列 + Element UI 的前端项目。
 
