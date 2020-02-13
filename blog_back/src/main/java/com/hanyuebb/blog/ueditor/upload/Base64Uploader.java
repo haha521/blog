@@ -1,17 +1,20 @@
 package com.hanyuebb.blog.ueditor.upload;
 
+import java.util.Map;
+
+import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.codec.binary.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.hanyuebb.blog.ueditor.PathFormat;
 import com.hanyuebb.blog.ueditor.define.AppInfo;
 import com.hanyuebb.blog.ueditor.define.BaseState;
 import com.hanyuebb.blog.ueditor.define.FileType;
 import com.hanyuebb.blog.ueditor.define.State;
 
-import java.util.Map;
-
-import org.apache.commons.codec.binary.Base64;
-
 public final class Base64Uploader {
-
+    static Logger logger = LoggerFactory.getLogger(Base64Uploader.class);
 	public static State save(String content, Map<String, Object> conf) {
 		
 		byte[] data = decode(content);
@@ -26,10 +29,12 @@ public final class Base64Uploader {
 
 		String savePath = PathFormat.parse((String) conf.get("savePath"),
 				(String) conf.get("filename"));
-		
+		String localSavePathPrefix = PathFormat.parse((String) conf.get("localSavePathPrefix"),
+                (String) conf.get("filename"));
 		savePath = savePath + suffix;
-		String physicalPath = (String) conf.get("rootPath") + savePath;
-
+		localSavePathPrefix = localSavePathPrefix + suffix;
+		String physicalPath = localSavePathPrefix;
+		logger.info("Base64Uploader physicalPath:{},savePath:{}",localSavePathPrefix,savePath);
 		State storageState = StorageManager.saveBinaryFile(data, physicalPath);
 
 		if (storageState.isSuccess()) {
@@ -42,7 +47,7 @@ public final class Base64Uploader {
 	}
 
 	private static byte[] decode(String content) {
-		return Base64.decodeBase64(content);
+		return Base64.decodeBase64(StringUtils.getBytesUtf8(content));
 	}
 
 	private static boolean validSize(byte[] data, long length) {

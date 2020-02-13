@@ -34,7 +34,7 @@
         //, serverUrl: URL + "jsp/controller.jsp"
         // 根据环境变量判断，则打包时不用修改
         , serverUrl: process.env.NODE_ENV !== 'production' ?
-            "http://localhost:8080/api/core/ueditor/img" : "http://39.99.152.66:8088/api/core/ueditor/img"
+            "http://localhost:8080/api/core/ueditor/img" : "http://39.99.152.66:80/api/core/ueditor/img"
         //, serverUrl: "http://localhost:8080/api/core/ueditor/img" // 本地环境
         //, serverUrl: "http://58.87.66.244:80/api/core/ueditor/img" // 生产环境
 

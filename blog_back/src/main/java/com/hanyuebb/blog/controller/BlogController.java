@@ -64,7 +64,7 @@ public class BlogController {
         homeDatePo.setStudys((List<TbArticle>) map.get("studys"));
         homeDatePo.setMsgs(msgService.selectMsg());
         homeDatePo.setShipLinks(outService.selectOutLink());
-        homeDatePo.setServerPath("http://localhost:8088");
+        homeDatePo.setServerPath("http://39.99.152.66:8088");
         return BaseResultBulider.success(homeDatePo, ResultCode.SUCCESS);
     }
 
@@ -105,7 +105,7 @@ public class BlogController {
         resultPage.setPageSize(4);
         resultPage.setTotalCount(pageInfo.getTotal());
         studyDataPo.setStudyPage(resultPage);
-        studyDataPo.setServerPath("http://localhost:8088");
+        studyDataPo.setServerPath("http://39.99.152.66:8088");
         return BaseResultBulider.success(studyDataPo,ResultCode.SUCCESS);
     }
 
@@ -126,7 +126,7 @@ public class BlogController {
         resultPage.setPageNo(pageQueryVo.getPageNo());
         resultPage.setPageSize(4);
         studyDataPo.setStudyPage(resultPage);
-        studyDataPo.setServerPath("http://localhost:8088");
+        studyDataPo.setServerPath("http://39.99.152.66:8088");
         return BaseResultBulider.success(studyDataPo,ResultCode.SUCCESS);
     }
 
@@ -212,7 +212,7 @@ public class BlogController {
         resultPage.setPageSize(4);
         resultPage.setPageNo(1);
         essayDataPo.setEssayPage(resultPage);
-        essayDataPo.setServerPath("http://localhost:8088");
+        essayDataPo.setServerPath("http://39.99.152.66:8088");
         return BaseResultBulider.success(essayDataPo,ResultCode.SUCCESS);
     }
 
@@ -235,7 +235,7 @@ public class BlogController {
         resultPage.setTotalCount(pageInfo.getTotal());
         EssayDataPo essayDataPo = new EssayDataPo();
         essayDataPo.setEssayPage(resultPage);
-        essayDataPo.setServerPath("http://localhost:8088");
+        essayDataPo.setServerPath("http://39.99.152.66:8088");
         return BaseResultBulider.success(essayDataPo,ResultCode.SUCCESS);
     }
 

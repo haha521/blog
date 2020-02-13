@@ -46,7 +46,7 @@ public class UploadController {
         // 获取后缀名
         // String suffixName = fileName.substring(fileName.lastIndexOf("."));
         // 文件保存路径
-        String filePath = "d:/upload/";
+        String filePath = "/upload";
         // 文件重命名，防止重复
         fileName = filePath + System.currentTimeMillis() + fileName;
         // 文件对象
