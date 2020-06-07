@@ -29,9 +29,9 @@ public class UeditorController {
     @RequestMapping("/img")
     public String exec( HttpServletRequest request) throws UnsupportedEncodingException, JSONException {
         request.setCharacterEncoding("utf-8");
-        String rootPath = request.getSession().getServletContext().getRealPath("/");
+        //String rootPath = request.getSession().getServletContext().getRealPath("/");
+        String rootPath = "/usr/local/docker/tomcat/apache-tomcat-7.0.70/webapps/ROOT/upload";
+        //System.out.println(rootPath);
         return new ActionEnter( request, rootPath ).exec();
     }
-
-
 }

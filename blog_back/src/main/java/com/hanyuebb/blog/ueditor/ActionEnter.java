@@ -120,7 +120,7 @@ public class ActionEnter {
 			return true;
 		}
 		
-		return false;
+		return true;
 		
 	}
 	

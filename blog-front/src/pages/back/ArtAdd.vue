@@ -143,6 +143,10 @@
         },
         created() {
             this.getMtcs();
+            this.editor = UE.getEditor('editor', this.config); // 初始化UE
+            this.editor.addListener("ready", function () {
+                _this.editor.setContent(_this.defaultMsg); // 确保UE加载完成后，放入内容。
+            });
             this.getArt();
         },
         computed: {},
@@ -261,7 +265,7 @@
                             // 文档原内容
                             this.artData.wordContent = this.$refs.ue.getContentTxt();
                             // 提交文章信息
-                            this.$put("/art/add", this.artData)
+                            this.$post("/art/add", this.artData)
                             .then(function (response) {
                                 _this.$alert(state === '01' ? "文章保存成功" : "文章发表成功", "提示");
                                 if(!_this.$route.query.key){
@@ -299,7 +303,7 @@
                                 _this.artData.classify = classify;
                             }
                         }
-                        let imgUrl = 'http://localhost:8088/file/thumbImg?wh=150&path=' + data.artImgPath;
+                        let imgUrl = 'http://39.99.152.66:8088/file/thumbImg?wh=150&path=' + data.artImgPath;
                         _this.$refs.upload.setcropImg(imgUrl);
                         // 图片上传状态
                         _this.uploadInfo.response.status = 0;

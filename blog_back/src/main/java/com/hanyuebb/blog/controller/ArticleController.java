@@ -30,7 +30,7 @@ public class ArticleController {
     @Autowired
     ArticleService articleService;
 
-    @RequestMapping(value = "/add",method = RequestMethod.PUT)
+    @RequestMapping(value = "/add",method = RequestMethod.POST)
     public BaseResult add(@RequestBody TbArticle tbArticle){
         if(tbArticle.getArticleId()==null){
             tbArticle.setLikes(0);
